@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/bhavin/DSA/practice-programs/arrays'
+make: Leaving directory '/home/bhavin/DSA/practice-programs/arrays'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+
