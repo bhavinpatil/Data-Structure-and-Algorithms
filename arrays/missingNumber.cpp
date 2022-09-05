@@ -31,6 +31,7 @@ public:
     void display();
     T missingNumber();
     T missingNumber2();
+    T missingNumber3();
 };
 template <class T>
 void Array<T>::display()
@@ -76,20 +77,38 @@ T Array<T>::missingNumber2()
     }
 }
 
+template <class T>
+T Array<T>::missingNumber3()
+{
+    int l = A[0], h = A[length - 1];
+    int diff = l - 0;
+    for (int i = 0; i < length - 1; i++)
+    {
+        if (A[i] - i != diff)
+        {
+            while (diff < A[i] - i)
+            {
+                cout << i + diff<<" ";
+                diff++;
+            }
+        }
+    }
+}
+
 int main()
 {
     Array<int> arr;
-    arr.insert(0, 11);
-    arr.insert(1, 12);
-    arr.insert(2, 13);
-    arr.insert(3, 15);
-    arr.insert(4, 16);
-    arr.insert(5, 17);
-    arr.insert(6, 18);
-    arr.insert(7, 19);
+    arr.insert(0, 6);
+    arr.insert(1, 7);
+    arr.insert(2, 8);
+    arr.insert(3, 9);
+    arr.insert(4, 11);
+    arr.insert(5, 12);
+    arr.insert(6, 15);
+    arr.insert(7, 16);
     arr.display();
     cout << "\n"
-         << arr.missingNumber2() << endl;
+         << arr.missingNumber3() << endl;
 
     return 0;
 }
